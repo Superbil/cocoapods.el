@@ -1,0 +1,9 @@
+* Cocoapods.el
+
+  Cocoapods is a package management helper for Emacs.
+
+* Use
+
+* Contributing
+
+* Pull requests
