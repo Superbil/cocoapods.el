@@ -78,9 +78,10 @@ USE-ASYNC execute command in async buffer or sync buffer."
 (defun cocoapods-version ()
   "Cococapods version."
   (interactive)
-  (substring
-   (shell-command-to-string (format "%s --version" cocoapods-command-path))
-   0 -1))
+  (message "Cocoapods-version %s"
+           (substring
+            (shell-command-to-string (format "%s --version" cocoapods-command-path))
+            0 -1)))
 
 ;;;###autoload
 (defun cocoapods-init ()
