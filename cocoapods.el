@@ -6,6 +6,7 @@
 ;; Version: 0.1.0
 ;; Keywords: tools
 ;; Created: 19 Jul 2016
+;; Package-Requires: ((emacs "24.3"))
 ;; URL: https://github.com/Superbil/cocoapods.el
 
 ;; This file is NOT part of GNU Emacs.
