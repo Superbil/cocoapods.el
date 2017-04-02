@@ -65,7 +65,7 @@ DIR use for `cocoapods--locate-podfile'."
         (async-shell-command command name)
       (shell-command command name))))
 
-(defun projectile-cocoapods-command (sub-command &optional use-async)
+(defun cocoapods-projectile-command (sub-command &optional use-async)
   "Execute cocoapods and SUB-COMMAND with projectitle.
 USE-ASYNC execute command in async buffer or sync buffer."
   (projectile-with-default-dir (projectile-project-root)
@@ -117,36 +117,36 @@ Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
   (cocoapods--command "reinstall" t))
 
 (after-load 'projectile
-  (defun projectile-cocoapods-init ()
+  (defun cocoapods-init@projectile ()
     "Execute 'pod init' at root of the project."
     (interactive)
-    (projectile-cocoapods-command "init" t))
+    (cocoapods-projectile-command "init" t))
 
-  (defun projectile-cocoapods-install ()
+  (defun cocoapods-command-install@projectitle ()
     "Execute 'pod install' at root of the project."
     (interactive)
-    (projectile-cocoapods-command "install" t))
+    (cocoapods-projectile-command "install" t))
 
-  (defun projectile-cocoapods-update ()
+  (defun cocoapods-update@projectile ()
     "Execute 'pod update' at root of the project."
     (interactive)
     (projectile-cocoapods-command "update" t))
 
-  (defun projectile-cocoapods-open ()
+  (defun cocoapods-open@projectile ()
     "Execute 'pod open' at root of the project.
 
 Opens the workspace in xcode. If no workspace found in the current
 directory looks up until finds one."
     (interactive)
     ;; TOOD: check cocoapods-open is installed.
-    (projectile-cocoapods-command "open" nil))
+    (cocoapods-projectile-command "open" nil))
 
-  (defun projectile-cocoapods-reinstall ()
+  (defun cocoapods-reinstall@projectile ()
     "Execute 'pod reinstall' at root of the project.
 
 Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
     (interactive)
-    (projectile-cocoapods-command "reinstall" t))
+    (cocoapods-projectile-command "reinstall" t))
   )
 
 (provide 'cocoapods)
