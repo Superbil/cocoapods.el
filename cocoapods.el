@@ -118,38 +118,39 @@ Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
   (interactive)
   (cocoapods--command "reinstall" t))
 
-(after-load 'projectile
-  (defun cocoapods-init@projectile ()
-    "Execute 'pod init' at root of the project."
-    (interactive)
-    (cocoapods-projectile-command "init" t))
+;; (eval-after-load 'projectile
+;;   (progn
+;;     (defun cocoapods-init@projectile ()
+;;       "Execute 'pod init' at root of the project."
+;;       (interactive)
+;;       (cocoapods-projectile-command "init" t))
 
-  (defun cocoapods-command-install@projectitle ()
-    "Execute 'pod install' at root of the project."
-    (interactive)
-    (cocoapods-projectile-command "install" t))
+;;     (defun cocoapods-command-install@projectitle ()
+;;       "Execute 'pod install' at root of the project."
+;;       (interactive)
+;;       (cocoapods-projectile-command "install" t))
 
-  (defun cocoapods-update@projectile ()
-    "Execute 'pod update' at root of the project."
-    (interactive)
-    (projectile-cocoapods-command "update" t))
+;;     (defun cocoapods-update@projectile ()
+;;       "Execute 'pod update' at root of the project."
+;;       (interactive)
+;;       (projectile-cocoapods-command "update" t))
 
-  (defun cocoapods-open@projectile ()
-    "Execute 'pod open' at root of the project.
+;;     (defun cocoapods-open@projectile ()
+;;       "Execute 'pod open' at root of the project.
 
-Opens the workspace in xcode. If no workspace found in the current
-directory looks up until finds one."
-    (interactive)
-    ;; TOOD: check cocoapods-open is installed.
-    (cocoapods-projectile-command "open" nil))
+;; Opens the workspace in xcode. If no workspace found in the current
+;; directory looks up until finds one."
+;;       (interactive)
+;;       ;; TOOD: check cocoapods-open is installed.
+;;       (cocoapods-projectile-command "open" nil))
 
-  (defun cocoapods-reinstall@projectile ()
-    "Execute 'pod reinstall' at root of the project.
+;;     (defun cocoapods-reinstall@projectile ()
+;;       "Execute 'pod reinstall' at root of the project.
 
-Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
-    (interactive)
-    (cocoapods-projectile-command "reinstall" t))
-  )
+;; Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
+;;       (interactive)
+;;       (cocoapods-projectile-command "reinstall" t)))
+;;   )
 
 (provide 'cocoapods)
 
