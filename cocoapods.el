@@ -54,11 +54,12 @@
       (or cocoapods-podfile
           (error "No Podfile found in %s or any parent directory" dir))))
 
-(defun cocoapods--command (sub-command &optional use-async dir)
+(defun cocoapods--command (sub-command &optional use-async use-podfile dir)
   "Execute cocoapods with SUB-COMMAND at root of the project.
 USE-ASYNC Execute command in async buffer or sync buffer.
+USE-PODFILE to enable use DIR.
 DIR use for `cocoapods--locate-podfile'."
-  (let* ((default-directory (file-name-directory (cocoapods--locate-podfile dir)))
+  (let* ((default-directory (if use-podfile (file-name-directory (cocoapods--locate-podfile dir)) default-directory))
          (command (format "%s %s" cocoapods-command-path sub-command))
          (name (concat "*Cocopoads-" (if use-async "Async" "Sync") "*")))
     (if use-async
@@ -117,6 +118,11 @@ directory looks up until finds one."
 Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
   (interactive)
   (cocoapods--command "reinstall" t))
+
+(defun cocoapods-repo-update ()
+  "Execute 'pod repo update'."
+  (interactive)
+  (cocoapods--command "repo update" t))
 
 ;; (eval-after-load 'projectile
 ;;   (progn
