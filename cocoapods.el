@@ -106,7 +106,7 @@ USE-ASYNC execute command in async buffer or sync buffer."
 (defun cocoapods-open ()
   "Execute 'pod open' at root of the project.
 
-Opens the workspace in xcode. If no workspace found in the current
+Opens the workspace in xcode.  If no workspace found in the current
 directory looks up until finds one."
   (interactive)
   ;; TOOD: check cocoapods-open is installed.
