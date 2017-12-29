@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016-2018 Cheng, Kai-Yuan
 
 ;; Author: Cheng, Kai-Yuan
-;; Version: 0.1.0
+;; Version: 1.0.0
 ;; Keywords: tools
 ;; Created: 19 Jul 2016
 ;; Package-Requires: ((emacs "24.3"))
