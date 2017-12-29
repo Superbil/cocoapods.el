@@ -1,6 +1,6 @@
 ;;; cocoapods.el --- Manage cocoapods from Emacs
 
-;; Copyright (C) 2016 Cheng, Kai-Yuan
+;; Copyright (C) 2016-2018 Cheng, Kai-Yuan
 
 ;; Author: Cheng, Kai-Yuan
 ;; Version: 0.1.0
