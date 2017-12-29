@@ -67,12 +67,6 @@ DIR use for `cocoapods--locate-podfile'."
         (async-shell-command command name)
       (shell-command command name))))
 
-(defun cocoapods-projectile-command (sub-command &optional use-async)
-  "Execute cocoapods and SUB-COMMAND with projectitle.
-USE-ASYNC execute command in async buffer or sync buffer."
-  (projectile-with-default-dir (projectile-project-root)
-    (cocoapods--command sub-command use-async (projectile-project-root))))
-
 
 ;;;; Public API
 
@@ -124,6 +118,15 @@ Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
   (interactive)
   (cocoapods--command "repo update" t))
 
+
+;;;; projectitle methods
+
+;; (defun cocoapods-projectile-command (sub-command &optional use-async)
+;;   "Execute cocoapods and SUB-COMMAND with projectitle.
+;; USE-ASYNC execute command in async buffer or sync buffer."
+;;   (projectile-with-default-dir (projectile-project-root)
+;;     (cocoapods--command sub-command use-async (projectile-project-root))))
+
 ;; (eval-after-load 'projectile
 ;;   (progn
 ;;     (defun cocoapods-init@projectile ()
@@ -158,6 +161,7 @@ Runs 'pod install' fefor trying to reopen the workspace with 'pod open'."
 ;;       (cocoapods-projectile-command "reinstall" t)))
 ;;   )
 
+
 (provide 'cocoapods)
 
 ;;; cocoapods.el ends here
